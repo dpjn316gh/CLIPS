@@ -1,0 +1,7 @@
+(unwatch all)
+(clear)
+(load /tmp/bold-credit-card-payment-definitions.clp)
+(load /tmp/bold-credit-card-payment-general-facts.clp)
+(load /tmp/bold-credit-card-payment-rules.clp)
+(reset)
+(watch all)
