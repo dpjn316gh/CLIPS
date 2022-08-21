@@ -118,4 +118,34 @@
     zip -g ./function.zip -r app
     ```
    
-3. PENDING REVIEW LAMBDA DOCUMENTATION
+3. Create a S3 bucket 
+4. Upload the zip file into the S3 bucket
+5. Create a lambda function
+   
+   - Option: Author from scratch
+   - Runtime: Python 3.8 or 3.7. Depends on your locally environment
+6. Edit lambda function
+
+   - Runtime settings.
+     - Handler: app.main.handler
+   - Upload a file from Amazon S3
+   - Set the permission->roles for the lambda function:
+     
+     - AmazonS3ReadOnlyAccess
+     - AmazonS3ObjectLambdaExecutionRolePolicy
+
+7. Create API Gateway -> Rest API
+
+   - Create method ANY
+     
+     - Use Lambda Proxy integration: True
+     - Lambda function name: <Give lambda's name>
+     - Create New Child Resource
+       
+       - proxy resource
+       - Lambda Function name
+     
+8. Testing:
+
+    - {proxy}: credit-card-payment
+    - Body: Use the example as it's shown for locally testing
