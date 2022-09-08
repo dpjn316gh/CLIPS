@@ -70,12 +70,13 @@
     (direction south) 
     (from pit_north) 
     (to pit_south)
+    (symmetric TRUE)
   )
-  (path 
-    (direction north) 
-    (from pit_south) 
-    (to pit_north)
-  )
+  ;; (path 
+  ;;   (direction north) 
+  ;;   (from pit_south) 
+  ;;   (to pit_north)
+  ;; )
   (path 
     (direction up)
     (from pit_north pit_south) 
@@ -86,13 +87,32 @@
     (direction down)
     (from pit_south)
     (to cavern)
+    (symmetric TRUE)
   )
-  (path
-    (direction up)
-    (from cavern)
-    (to pit_south)
-  )
+  ;; (path
+  ;;   (direction up)
+  ;;   (from cavern)
+  ;;   (to pit_south)
+  ;; )
+)
 
+(deffacts symmetrical_paths
+  (symmetrical_path
+    (from north)
+    (to south)
+  )
+  (symmetrical_path
+    (from south)
+    (to north)
+  )
+  (symmetrical_path
+    (from up)
+    (to down)
+  )
+  (symmetrical_path
+    (from down)
+    (to up)
+  )
 )
 
 

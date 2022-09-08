@@ -104,6 +104,38 @@
 
 ;;;;;;;;;;;;;
 
+
+(defrule create_symmetrical_path
+  (path 
+    (symmetric TRUE)
+    (direction $?direction)
+    (from $?from_check)
+    (to ?to)
+    (blocked ?blocked)
+    (blocked_message ?blocked_message)    
+  )
+  (test (= (length$ ?from_check) 1))
+  (test (= (length$ ?direction) 1))  
+  (symmetrical_path
+    (from $?direction)
+    (to ?new_direction)
+  )
+=>
+  (println (nth$ 1 ?from_check))
+  (assert 
+    (path 
+      (direction ?new_direction)
+      (from ?to )
+      (to (nth$ 1 ?from_check))
+      (blocked ?blocked)
+      (blocked_message ?blocked_message)
+    )
+  )
+)
+
+
+
+
 (defrule eat_default
   (declare (salience -5))
   ?c <- (command (action eat ?))
