@@ -44,6 +44,7 @@
  (println "Poof! you are teleported out of the pit")
 )
 
+;;; Ejercicios Capítulo 3
 
 (defrule eat_mushroom1
  (thing (id adventurer) (location pit_north))
