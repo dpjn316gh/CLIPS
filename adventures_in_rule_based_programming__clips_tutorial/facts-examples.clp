@@ -2,7 +2,7 @@
  (credit-card-payment
   (action_type payment)
   (transaction_id 001)
-  (email "jorge.porras@bold.co")
+  (email "jorge.porras@example.com")
   (user_fullname "Jorge Porras")
   (user_name "jorge.porras")
   (payment_method CREDIT-CARD)
@@ -20,7 +20,7 @@
  (credit-card-payment
   (action_type payment)
   (transaction_id 002)
-  (email "jorge.porras@bold.co")
+  (email "jorge.porras@example.com")
   (user_fullname "Jorge Porras")
   (user_name "jorge.porras")
   (payment_method CREDIT-CARD)
@@ -38,7 +38,7 @@
  (credit-card-payment
   (action_type payment)
   (transaction_id 003)
-  (email "jorge.porras@bold.co")
+  (email "jorge.porras@example.com")
   (user_fullname "Jorge Porras")
   (user_name "jorge.porras")
   (payment_method CREDIT-CARD)
